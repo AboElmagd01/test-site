@@ -3,6 +3,11 @@ body{
 	padding:0;
 }
 
+.magazine-viewport {
+	z-index: 99;
+
+}
+
 .magazine-viewport .container{
 	position:absolute;
 	top:50%;
@@ -210,7 +215,7 @@ body{
 	left:0;
 	width:100%;
 	height:140px;
-	z-index:1;
+	z-index:100;
 }
 
 .thumbnails > div{
