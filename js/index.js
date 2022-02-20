@@ -10,13 +10,14 @@ const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 // Change the icons inside the button based on previous settings
 // if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
 
-if(('color-theme' in localStorage)){
+if (localStorage.getItem('color-theme') === 'light'  || (!('color-theme' in localStorage) ))  {
+    document.documentElement.classList.remove('dark');
+
     themeToggleDarkIcon.classList.remove('hidden');
-}
-else if (localStorage.getItem('color-theme') === 'dark') {
-    themeToggleLightIcon.classList.remove('hidden');
+
 } else {
-    themeToggleDarkIcon.classList.remove('hidden');
+    document.documentElement.classList.add('dark');
+    themeToggleLightIcon.classList.remove('hidden');
 }
 
 
