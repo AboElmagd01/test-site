@@ -5,7 +5,7 @@ const toggle = () => menu.classList.toggle("hidden");
 const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-themeToggleDarkIcon.classList.remove('hidden');
+// themeToggleDarkIcon.classList.remove('hidden');
     // themeToggleLightIcon.classList.toggle('hidden');
 
 
