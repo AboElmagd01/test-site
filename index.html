@@ -19,6 +19,22 @@
             font-family: Futura;
             src: url('fonts/Futura Bk BT Book.ttf') format('truetype');
         }
+        #left {
+            width: 600px;
+            border-bottom: 300px solid white;
+            border-right: 300px solid transparent;
+            float: left;
+        }
+
+        #right {
+            top:0;left: 0;
+            position: relative;
+            width: 600px;
+            border-top: 300px solid #94ccec;
+            border-left: 300px solid transparent;
+            float: right;
+            margin-left: -300px;
+        }
 
     </style>
 
@@ -74,14 +90,22 @@
     </div>
 <!--    <div class="py-10"><div class="bg-cover bg-center h-[10rem] sm:h-[16rem] md:h-[24rem]  lg:h-[34rem]   " style="background-image: url('img/Event mock.jpg')"></div></div>-->
 
-    <div class="text-center  justify-between items-center mx-auto border-gray-200  py-2.5 rounded">
-        <div>
-            <h1 class=" text-5xl text-[#0272B1] dark:text-gray-300">Vision</h1>
-            <p class=" pt-5 dark:text-white">Being a campus leader for inclusive and innovative student programming skills through sessions and events </p>
+    <div  class="text-center  justify-between items-center mx-auto border-gray-200  py-2.5 rounded">
+
+
+        <div class="  flex flex-wrap justify-center  pb-14  pt-5 ">
+        <div >
+            <div  class=" text-white rounded-full bg-[#0272B1] flex flex-wrap items-center justify-center mb-4 " style="height: 350px; width: 350px ">
+                <h1 class=" text-5xl dark:text-gray-300 pt-14">Vision</h1>
+                <p class=" dark:text-white pb-14 px-5 ">Being a campus leader for inclusive and innovative student programming skills through sessions and events </p>
+            </div>
         </div>
-        <div class="text-center pt-20 pb-20">
-            <h1 class=" text-5xl text-[#0272B1] dark:text-gray-300">Mission</h1>
-            <p class=" pt-5 dark:text-white">Facilitating meaningful involvement, community engagement and leadership development, which enable all students to contribute to the society.</p>
+        <div>
+            <div  class=" text-white rounded-full bg-[#0272B1] flex flex-wrap items-center justify-center md:ml-32" style="height: 350px; width: 350px; ">
+                <h1 class=" text-5xl dark:text-gray-300 pt-14 ">Mission</h1>
+                <p class=" pb-12 px-4 dark:text-white">Facilitating meaningful involvement, community engagement and leadership development, which enable all students to contribute to the society.</p>
+            </div>
+        </div>
         </div>
         <!--       ------------------------------------------------------ TECH-->
 
@@ -231,6 +255,95 @@
                     <h1 class="text-5xl pt-5">WEB</h1>
                     <h1 class="text-2xl pb-5">DEVELOPMENT</h1>
                     <p class="hidden group-hover:block dark:text-white pb-5" >Facilitating meaningful involvement, community engagement and leadership development, which enable all students to contribute to the society.</p>
+
+                </div>
+        </div>
+        </div>
+
+        <!--       ------------------------------------------------------ NONTECH-->
+
+
+        <div class=" bg-cover  text-center   pb-10   dark:bg-gray-600"  >
+            <h1 class=" text-5xl text-[#0272B1]  pt-5 pb-10">Non-Technical committees </h1>
+            <div   class=" grid grid-cols-1 gap-12 text-white  dark:text-white  md:grid-cols-3 text-center lg:grid-cols-6 px-1 sm:px-2 md:px-4  lg:px-7" >
+                <div class="group bg-[#0272B1] dark:bg-slate-800 rounded-[30px]">
+                    <svg class="visible group-hover:hidden mt-14 "  style="    margin-left: auto;  margin-right: auto;  width: 60%;" width="144" height="144" viewBox="0 0 144 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.2772 139.194C18.4325 138.279 18.5734 137.488 18.7056 136.692C20.0922 128.203 21.5261 119.721 22.8497 111.222C24.1831 102.654 25.3382 94.0592 26.2101 85.4339C26.5905 81.6624 26.8177 77.8745 27.115 74.0946C27.1211 74.0126 27.1388 73.937 27.1587 73.8076L28.361 73.6242C32.4347 72.9954 36.4821 72.2314 40.4741 71.1995C45.5824 69.8774 50.5208 68.1204 55.0503 65.3401C58.6591 63.124 61.7852 60.3561 64.4759 57.0909C65.022 56.4235 65.5527 55.7341 66.0496 55.105L89.3321 72.2302C89.0586 72.63 88.722 73.1212 88.3846 73.6117C84.2186 79.6563 82.0834 86.3819 81.6326 93.6792C81.4044 97.216 81.4632 100.766 81.8085 104.293C82.1531 107.715 82.6079 111.126 83.0171 114.541C83.0369 114.671 83.0568 114.802 83.0788 114.946C81.9846 115.365 80.9155 115.769 79.8514 116.184C73.8739 118.514 68.0138 121.115 62.1879 123.797C49.4195 129.672 36.8418 135.937 24.3542 142.384C24.0389 142.548 23.7216 142.708 23.406 142.869L23.2873 142.76C23.398 142.662 23.5289 142.581 23.6152 142.467C32.4739 130.422 41.33 118.376 50.1835 106.329C50.3325 106.127 50.4547 105.956 50.7586 106.037C53.8257 106.853 57.9448 104.075 58.2198 99.8619C58.4842 95.8188 55.2297 92.473 51.1571 92.5782C47.6541 92.6687 44.6548 95.721 44.6036 99.2293C44.5915 100.212 44.7762 101.136 45.2745 101.987C45.4072 102.214 45.3832 102.375 45.2252 102.593C36.3408 114.667 27.4581 126.746 18.577 138.828C18.5078 138.921 18.4302 139.008 18.2772 139.194Z" fill="#FAFAFA"/>
+                        <path d="M96.5227 68.4436C86.7765 61.231 77.0424 54.0274 67.3204 46.8327L93.6056 5.10614L128.874 31.3099L96.5227 68.4436Z" fill="#FAFAFA"/>
+                    </svg>
+
+                    <div class="bg-[#2887bd] mt-14 group-hover:mt-0 rounded-b-[30px] group-hover:rounded-t-[30px] group-hover:rounded-none" >
+                        <h1 class="text-5xl pt-5 ">Graphic</h1>
+                        <h1 class="text-2xl pb-5">Design</h1>
+                    </div>
+                    <p class="hidden group-hover:block dark:text-white pb-4 pt-7" >Facilitating meaningful involvement, community engagement and leadership development, which enable all students to contribute to the society.</p>
+
+
+                </div>
+                <div class="group bg-[#0272B1] dark:bg-slate-800 rounded-[30px]">
+                    <svg class="visible group-hover:hidden mt-[4.3rem]"  style="   margin-left: auto;  margin-right: auto;  width: 60%;" width="165" height="130" viewBox="0 0 165 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M159.844 45C156.75 45 154.688 47 154.688 50C154.688 79 136.125 104 110.344 114.5C124.781 102.5 134.062 85 134.062 65C134.062 29 104.156 0 67.0312 0C29.9063 0 0 29 0 65C0 101 29.9063 130 67.0312 130H82.5C127.875 130 165 94 165 50C165 47 162.938 45 159.844 45ZM30.4219 29.5C36.0938 23.5 46.4062 23.5 52.0781 29.5C55.1719 32 56.7188 36 56.7188 40C56.7188 44 55.1719 48 52.0781 50.5C49.5 53.5 45.375 55 41.25 55C37.125 55 33 53.5 30.4219 50.5C27.3281 48 25.7812 44 25.7812 40C25.7812 36 27.3281 32 30.4219 29.5ZM52.0781 100.5C49.5 103.5 45.375 105 41.25 105C37.125 105 33 103.5 30.4219 100.5C27.3281 98 25.7812 94 25.7812 90C25.7812 86 27.3281 82 30.4219 79.5C36.0938 74 46.4062 74 52.0781 79.5C55.1719 82.5 56.7188 86 56.7188 90C56.7188 94 55.1719 98 52.0781 100.5ZM56.2031 75.5C53.1094 73 51.5625 69 51.5625 65C51.5625 61 53.1094 57 56.2031 54.5C61.875 49 72.1875 49 77.8594 54.5C80.9531 57.5 82.5 61 82.5 65C82.5 69 80.9531 73 77.8594 75.5C75.2812 78.5 71.1562 80 67.0312 80C62.9062 80 58.7812 78.5 56.2031 75.5ZM103.641 100.5C101.062 103.5 96.9375 105 92.8125 105C88.6875 105 84.5625 103.5 81.9844 100.5C78.8906 98 77.3438 94 77.3438 90C77.3438 86 78.8906 82 81.9844 79.5C87.6562 74 97.9688 74 103.641 79.5C106.734 82.5 108.281 86 108.281 90C108.281 94 106.734 98 103.641 100.5ZM103.641 50.5C101.062 53.5 96.9375 55 92.8125 55C88.6875 55 84.5625 53.5 81.9844 50.5C78.8906 48 77.3438 44 77.3438 40C77.3438 36 78.8906 32 81.9844 29.5C87.6562 24 97.9688 24 103.641 29.5C106.734 32 108.281 36 108.281 40C108.281 44 106.734 48 103.641 50.5Z" fill="#FAFAFA"/>
+                    </svg>
+
+                    <div class="bg-[#2887bd] mt-14  group-hover:mt-0 rounded-b-[30px] group-hover:rounded-t-[30px] group-hover:rounded-none" >
+                    <h1 class="text-5xl pt-5">Video</h1>
+                    <h1 class="text-2xl pb-5">Production</h1>
+                    </div>
+                    <p class="hidden group-hover:block dark:text-white pb-5 pt-7" >Facilitating meaningful involvement, community engagement and leadership development, which enable all students to contribute to the society.</p>
+
+                </div>
+                <div class="group bg-[#0272B1] dark:bg-slate-800 rounded-[30px]">
+                    <svg class="visible group-hover:hidden mt-14"  style="   margin-left: auto;  margin-right: auto;  width: 60%;" width="77" height="144" viewBox="0 0 77 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M69.9006 142.812H6.66928C3.53228 142.812 1 140.32 1 137.314V6.67621C1 3.63386 3.57007 1.17798 6.66928 1.17798H69.9006C73.0376 1.17798 75.5699 3.67051 75.5699 6.67621V137.314C75.5699 140.356 73.0376 142.812 69.9006 142.812Z" fill="#FAFAFA" stroke="#FAFAFA" stroke-miterlimit="10"/>
+                        <path d="M70.0753 15.6462H6.49463V123.776H70.0753V15.6462Z" fill="#0272B1" fill-opacity="0.5"/>
+                        <path d="M26.1183 10.3159H50.4516" stroke="#0272B1" stroke-width="6" stroke-miterlimit="10" stroke-linecap="round"/>
+                        <path d="M37.8925 139.766C41.3606 139.766 44.1721 137.039 44.1721 133.675C44.1721 130.31 41.3606 127.583 37.8925 127.583C34.4244 127.583 31.6129 130.31 31.6129 133.675C31.6129 137.039 34.4244 139.766 37.8925 139.766Z" fill="#0272B1"/>
+                    </svg>
+
+                    <div class="bg-[#2887bd] mt-14 group-hover:mt-0 rounded-b-[30px] group-hover:rounded-t-[30px] group-hover:rounded-none" >
+                    <h1 class="text-5xl pt-5">Social</h1>
+                    <h1 class="text-2xl pb-5">Media</h1>
+                    </div>
+                    <p class="hidden group-hover:block dark:text-white pb-5 pt-7" >Facilitating meaningful involvement, community engagement and leadership development, which enable all students to contribute to the society.</p>
+
+                </div>
+                <div class="group bg-[#0272B1] dark:bg-slate-800 rounded-[30px]">
+                    <svg class="visible group-hover:hidden mt-20"  style="   margin-left: auto;  margin-right: auto;  width: 60%;"  width="135" height="118" viewBox="0 0 135 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M86.0895 45.8889C92.6134 45.8889 97.902 51.0252 97.902 57.3611V88.4934C97.902 104.789 84.2994 118 67.5202 118C50.7406 118 37.138 104.789 37.138 88.4934V57.3611C37.138 51.0252 42.4267 45.8889 48.9505 45.8889H86.0895ZM34.6361 45.8827C32.2774 48.654 30.7554 52.1219 30.4463 55.9215L30.388 57.3611V88.4934C30.388 94.0434 31.679 99.3009 33.9854 103.997C31.7639 104.581 29.4232 104.889 27.0084 104.889C12.0921 104.889 0 93.1453 0 78.6588V57.3611C0 51.3418 4.77299 46.4055 10.8437 45.9269L11.8125 45.8889L34.6361 45.8827ZM100.404 45.8827L123.188 45.8889C129.711 45.8889 135 51.0252 135 57.3611V78.6667C135 93.1485 122.911 104.889 108 104.889C105.594 104.889 103.262 104.583 101.041 104.01C103.07 99.8936 104.313 95.3519 104.592 90.5611L104.652 88.4934V57.3611C104.652 52.9997 103.058 49.0008 100.404 45.8827ZM67.5 0C78.6841 0 87.75 8.80509 87.75 19.6667C87.75 30.5282 78.6841 39.3333 67.5 39.3333C56.3159 39.3333 47.25 30.5282 47.25 19.6667C47.25 8.80509 56.3159 0 67.5 0ZM111.375 6.55556C120.695 6.55556 128.25 13.8931 128.25 22.9444C128.25 31.9958 120.695 39.3333 111.375 39.3333C102.055 39.3333 94.5 31.9958 94.5 22.9444C94.5 13.8931 102.055 6.55556 111.375 6.55556ZM23.625 6.55556C32.9448 6.55556 40.5 13.8931 40.5 22.9444C40.5 31.9958 32.9448 39.3333 23.625 39.3333C14.3052 39.3333 6.75 31.9958 6.75 22.9444C6.75 13.8931 14.3052 6.55556 23.625 6.55556Z" fill="#FAFAFA"/>
+                    </svg>
+
+                    <div class="bg-[#2887bd] mt-14 group-hover:mt-0 rounded-b-[30px] group-hover:rounded-t-[30px] group-hover:rounded-none" >
+                    <h1 class="text-5xl pt-5">Human</h1>
+                    <h1 class="text-2xl pb-5">Resources</h1>
+                    </div>
+                    <p class="hidden group-hover:block dark:text-white pb-5 pt-7" >Facilitating meaningful involvement, community engagement and leadership development, which enable all students to contribute to the society.</p>
+
+                </div>
+                <div class="group bg-[#0272B1] dark:bg-slate-800 rounded-[30px]">
+                    <svg class="visible group-hover:hidden mt-[5.5rem]"  style="   margin-left: auto;  margin-right: auto;  width: 60%;"  width="127" height="109" viewBox="0 0 127 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M117.874 20.5282L105.098 17.2817L87.1659 43.662C86.4378 44.7368 85.4572 45.6286 84.3046 46.264C83.152 46.8994 81.8603 47.2603 80.5359 47.3169L87.671 91.5019C87.8754 92.7731 87.7685 94.0732 87.359 95.2969C86.9495 96.5207 86.2488 97.6338 85.3137 98.5461L83.3775 100.425H126.714V31.6357C126.72 29.0953 125.854 26.6253 124.254 24.6144C122.653 22.6035 120.409 21.1661 117.874 20.5282Z" fill="#FAFAFA"/>
+                        <path d="M46.6283 47.3169C45.3038 47.2603 44.0122 46.8994 42.8595 46.264C41.7069 45.6286 40.7262 44.7369 39.9982 43.662L22.0656 17.2817L9.28974 20.5282C6.75261 21.1651 4.50552 22.6017 2.90158 24.6123C1.29765 26.6228 0.427796 29.0934 0.428712 31.6357V100.425H43.7659L41.8297 98.5461C40.8945 97.6338 40.1938 96.5207 39.7842 95.297C39.3747 94.0732 39.2677 92.7731 39.4721 91.5019L46.6283 47.3169Z" fill="#FAFAFA"/>
+                        <path d="M71.9905 42.233L63.5715 31.248L55.1524 42.2534L55.6786 44.0094L47.7858 92.768L63.5715 108.082L79.3572 92.768L71.4643 44.0094L71.9905 42.233Z" fill="#FAFAFA"/>
+                        <path d="M94.0253 0.88623L63.5814 17.5667L80.1423 39.1695L99.0992 11.2774L94.0253 0.88623Z" fill="#FAFAFA"/>
+                        <path d="M28.0636 11.2774L47.0206 39.1695L63.5814 17.5667L33.1379 0.88623L28.0636 11.2774Z" fill="#FAFAFA"/>
+                    </svg>
+
+                    <div class="bg-[#2887bd] mt-14 group-hover:mt-0 rounded-b-[30px] group-hover:rounded-t-[30px] group-hover:rounded-none" >
+                    <h1 class="text-5xl pt-5">Public</h1>
+                    <h1 class="text-2xl pb-5">Relations</h1>
+                    </div>
+                    <p class="hidden group-hover:block dark:text-white pb-5 pt-7" >Facilitating meaningful involvement, community engagement and leadership development, which enable all students to contribute to the society.</p>
+
+                </div>
+                <div class="group bg-[#0272B1] dark:bg-slate-800 rounded-[30px]">
+                    <svg class="visible group-hover:hidden mt-20"  style="   margin-left: auto;  margin-right: auto;  width: 60%;"  width="151" height="117" viewBox="0 0 151 117" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.1 10.9688C15.1 4.9108 20.1703 0 26.425 0H86.825C93.0773 0 98.15 4.9108 98.15 10.9688V58.5H143.45V80.4375C147.626 80.4375 151 83.7053 151 87.75C151 91.7947 147.626 95.0625 143.45 95.0625H135.9C135.9 107.174 125.755 117 113.25 117C100.533 117 90.6 107.174 90.6 95.0625H60.4C60.4 107.174 50.2547 117 37.75 117C25.033 117 15.1 107.174 15.1 95.0625V65.8125H49.075C51.1513 65.8125 52.85 64.1672 52.85 62.1562C52.85 60.1453 51.1513 58.5 49.075 58.5H3.775C1.69026 58.5 0 56.8547 0 54.8438C0 52.8328 1.69026 51.1875 3.775 51.1875H56.625C58.7013 51.1875 60.4 49.5422 60.4 47.5312C60.4 45.5203 58.7013 43.875 56.625 43.875H11.325C9.23931 43.875 7.55 42.2297 7.55 40.2188C7.55 38.2078 9.23931 36.5625 11.325 36.5625H64.175C66.2513 36.5625 67.95 34.9172 67.95 32.9062C67.95 30.8953 66.2513 29.25 64.175 29.25H3.775C1.69026 29.25 0 27.6047 0 25.5938C0 23.5828 1.69026 21.9375 3.775 21.9375H15.1V10.9688ZM37.75 106.031C44.0023 106.031 49.075 101.118 49.075 95.0625C49.075 89.0068 44.0023 84.0938 37.75 84.0938C31.4977 84.0938 26.425 89.0068 26.425 95.0625C26.425 101.118 31.4977 106.031 37.75 106.031ZM113.25 84.0938C106.998 84.0938 101.925 89.0068 101.925 95.0625C101.925 101.118 106.998 106.031 113.25 106.031C119.502 106.031 124.575 101.118 124.575 95.0625C124.575 89.0068 119.502 84.0938 113.25 84.0938ZM110.112 36.5625H94.375V21.9375H110.112C114.123 21.9375 117.756 23.4686 120.8 26.2107L139.038 43.875C141.869 46.6172 143.45 50.342 143.45 54.2268V65.8125H128.35V54.2268L110.112 36.5625Z" fill="#FAFAFA"/>
+                    </svg>
+
+                    <div class="bg-[#2887bd] mt-14 group-hover:mt-0 rounded-b-[30px] group-hover:rounded-t-[30px] group-hover:rounded-none" >
+                    <h1 class="text-5xl pt-8 pb-10 ">Logistics</h1>
+                    </div>
+                    <p class="hidden group-hover:block dark:text-white pb-5 pt-7" >Facilitating meaningful involvement, community engagement and leadership development, which enable all students to contribute to the society.</p>
 
                 </div>
         </div>
