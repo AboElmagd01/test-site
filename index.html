@@ -20,20 +20,23 @@
             src: url('fonts/Futura Bk BT Book.ttf') format('truetype');
         }
         #left {
+            top:0;left: 0;
+
+            position: relative;
             width: 600px;
-            border-bottom: 300px solid white;
+            border-bottom: 300px solid #4b5563;
             border-right: 300px solid transparent;
-            float: left;
-        }
+            z-index: 1;
+            }
 
         #right {
             top:0;left: 0;
             position: relative;
             width: 600px;
-            border-top: 300px solid #94ccec;
+            border-top: 300px solid black;
             border-left: 300px solid transparent;
             float: right;
-            margin-left: -300px;
+            margin-left: -250px;
         }
 
     </style>
@@ -85,22 +88,21 @@
 
     </button>
     <div class="flex justify-center">
-        <img  alt="Crew" class=" object-cover md:object-scale-down py-4  lg:pl-10 dark:hidden" src="img/Event%20mock.jpg">
-        <img  alt="Crew" class="hidden object-cover grayscale md:object-scale-down py-4  dark:block" src="img/Crew.jpg">
+        <img  alt="Crew" class=" object-cover md:object-scale-down   lg:pl-10 dark:hidden" src="img/Event%20mock.jpg">
+        <img  alt="Crew" class="hidden object-cover grayscale md:object-scale-down   dark:block" src="img/Crew.jpg">
     </div>
 <!--    <div class="py-10"><div class="bg-cover bg-center h-[10rem] sm:h-[16rem] md:h-[24rem]  lg:h-[34rem]   " style="background-image: url('img/Event mock.jpg')"></div></div>-->
 
-    <div  class="text-center  justify-between items-center mx-auto border-gray-200  py-2.5 rounded">
+    <div  class="text-center bg-gradient-to-r from-[#76b8da]  justify-between items-center mx-auto rounded dark:from-[#4b5563]">
 
 
         <div class="  flex flex-wrap justify-center  pb-14  pt-5 ">
         <div >
-            <div  class=" text-white rounded-full bg-[#0272B1] flex flex-wrap items-center justify-center mb-4 dark:bg-gray-600 " style="height: 350px; width: 350px ">
+            <div  class=" text-white rounded-full bg-[#0272B1] flex flex-wrap items-center justify-center mb-4 dark:bg-gray-600 " style="height: 350px; width: 350px;">
                 <h1 class=" text-5xl dark:text-gray-200 pt-14">Vision</h1>
                 <p class=" dark:text-white pb-14 px-5 ">Being a campus leader for inclusive and innovative student programming skills through sessions and events </p>
             </div>
         </div>
-        <div>
             <div  class=" text-white rounded-full bg-[#0272B1] flex flex-wrap items-center justify-center md:ml-32 dark:bg-gray-600 " style="height: 350px; width: 350px; ">
                 <h1 class=" text-5xl dark:text-gray-200 pt-14 ">Mission</h1>
                 <p class=" pb-12 px-4 dark:text-white">Facilitating meaningful involvement, community engagement and leadership development, which enable all students to contribute to the society.</p>
