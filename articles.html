@@ -14,6 +14,66 @@
 
 
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $.getJSON( "data.json", function( article ) {
+            var tech = "";
+            var cat2 = "";
+            var cat3 = "";
+            var hiddenModal = "";
+            $.each( article, function( key, val ) {
+                var code = "            <div class=\"pl-10 pt-9 \">" +
+                    "                <div class=\"bg-[#005585]  dark:bg-slate-800   -rotate-6\">" +
+                    "                    <div class=\"bg-[#0272B1]  rotate-[5deg] hover:bg-white hover:text-[#0272B1] cursor-pointer dark:bg-gray-600 dark:hover:bg-gray-500 dark:hover:text-white \" onclick='modelShow(\""+ "art"+val.id +"\")' >" +
+                    "                        <img src=\"img/art_mock.png\" alt=\"\" class=\"h-64 w-64 p-4 pb-2\" >" +
+                    "                        <h1 class=\"text-2xl font-bold text-center pb-3 \">"+ val.title  +"</h1>" +
+                    "                    </div>" +
+                    "                </div>" +
+                    "            </div>"
+                var code2 =
+                    "    <div id=\""+ "art"+val.id +"\" aria-hidden=\"true\" class=\"hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0\">\n" +
+                    "        <div class=\"relative px-4 w-full max-w-2xl h-full md:h-auto\">\n" +
+                    "            <div class=\"relative bg-[#0272B1] rounded-lg shadow dark:bg-gray-700\">\n" +
+                    "                <div class=\"flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600\">\n" +
+                    "                    <h3 class=\"text-xl font-semibold text-gray-200 lg:text-2xl dark:text-white\">\n" +
+                    "                        Article #"+val.id+"           "+val.title+"" +
+                    "                    </h3>\n" +
+                    "                    <button type=\"button\" class=\"text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white\" onclick='modelHide(\""+ "art"+val.id +"\")'>\n" +
+                    "                        <svg class=\"w-5 h-5\" fill=\"currentColor\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z\" clip-rule=\"evenodd\"></path></svg>\n" +
+                    "                    </button>\n" +
+                    "                </div>\n" +
+                    "                <div class=\"p-6 space-y-6\">\n" +
+                    "                    <p class=\"text-base leading-relaxed text-gray-200 dark:text-gray-400\">\n" +
+                    "                        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.\n" +
+                    "                    </p>\n" +
+                    "                    <p class=\"text-base leading-relaxed text-gray-200 dark:text-gray-400\">\n" +
+                    "                        The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.\n" +
+                    "                    </p>\n" +
+                    "                </div>\n" +
+                    "                <div class=\"flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600\">\n" +
+                    "                    <button onclick='modelHide(\""+ "art"+val.id +"\")' type=\"button\" class=\"text-white bg-sky-800 hover:bg-sky-900 focus:ring-2 focus:ring-sky-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\">Close</button>\n" +
+                    "                    <button onclick=\"modalShow('"+ "art"+val.id +"', '"+ "art"+(val.id%article.length +1)+"')\" type=\"button\" class=\"text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600\">Next</button>\n" +
+                    "                </div>\n" +
+                    "            </div>\n" +
+                    "        </div>\n" +
+                    "    </div>"
+                if (val.cat === "technology")
+                    tech = tech.concat(code)
+                else if (val.cat === "cat2")
+                    cat2 = cat2.concat(code)
+                else
+                    cat3 = cat3.concat(code)
+                hiddenModal = hiddenModal.concat(code2)
+                console.log((val.id +1) % article.length )
+            });
+            $(tech).appendTo( "#cat1" );
+            $(cat2).appendTo( "#cat2" );
+            $(cat3).appendTo( "#cat3" );
+            $(hiddenModal).appendTo("body")
+
+        });
+
+    </script>
 </head>
 <body class="mx-auto dark:bg-gray-800" style="font-family: 'Futura'" >
     <button  id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5">
@@ -53,232 +113,42 @@
             </div>
         </div>
     </nav>
+    <!--                                                           Top-Button-->
+    <button id="top" onclick="topFunction()" title="Go to top" style=" position: fixed; z-index: 99;display: none" class=" shadow-lg bottom-11 right-14  bg-[#0272B1] hover:bg-[#033C5C] text-white font-bold py-5 px-6 rounded-full    dark:bg-gray-600 hover:dark:bg-gray-900">
+        <svg width="30" height="36" viewBox="0 0 60 66" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M26 62C26 64.2091 27.7909 66 30 66C32.2091 66 34 64.2091 34 62L26 62ZM32.8284 1.17157C31.2663 -0.390526 28.7337 -0.390526 27.1716 1.17157L1.71573 26.6274C0.15363 28.1895 0.15363 30.7222 1.71573 32.2843C3.27783 33.8464 5.81048 33.8464 7.37258 32.2843L30 9.65685L52.6274 32.2843C54.1895 33.8464 56.7222 33.8464 58.2843 32.2843C59.8464 30.7222 59.8464 28.1895 58.2843 26.6274L32.8284 1.17157ZM34 62L34 4L26 4L26 62L34 62Z" fill="#FFF"/></svg>
+
+    </button>
     <div class="text-center container justify-between items-center mx-auto border-gray-200 px-2 sm:px-4 py-2.5 rounded pt-7">
             <h1 class=" text-4xl font-bold text-[#0272B1] dark:text-gray-400">ARTICLES</h1>
     </div>
 
-    <div class="bg-[#EF2F88] w-full h-30 text-white flex flex-row overflow-x-auto mt-4">
+    <div  class="bg-[#EF2F88] w-full h-30 text-white flex flex-row overflow-x-auto mt-4 dark:bg-sky-900">
         <div class="bg-black/25 rotate-180 text-5xl font-bold p-5 pb-12 pt-12" style="writing-mode: vertical-lr;text-orientation: mixed;">Category #1</div>
-        <div class="flex shrink-0">
-            <div class="pl-10 pt-9 ">
-                <div class="bg-[#005585]  -rotate-6">
-                    <div class="bg-[#0272B1]  rotate-[5deg] hover:bg-white hover:text-[#0272B1] cursor-pointer" data-modal-toggle="art1"  >
-                        <img src="img/art_mock.png" alt="" class="h-64 w-64 p-4 pb-2" >
-                        <h1 class="text-2xl font-bold text-center pb-3 ">Huawei ICT winners</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="pl-10 pt-9 ">
-                <div class="bg-[#005585]  -rotate-6">
-                    <div class="bg-[#0272B1]  rotate-[5deg] hover:bg-white hover:text-[#0272B1] cursor-pointer " data-modal-toggle="art2"  >
-                        <img src="img/art_mock.png" alt="" class="h-64 w-64 p-4 pb-2" >
-                        <h1 class="text-2xl font-bold text-center pb-3 ">Huawei ICT winners</h1>
-                    </div>
-                </div>
-            </div>            <div class="pl-10 pt-9 ">
-                <div class="bg-[#005585]  -rotate-6">
-                    <div class="bg-[#0272B1]  rotate-[5deg] hover:bg-white hover:text-[#0272B1] cursor-pointer " data-modal-toggle="art3"  >
-                        <img src="img/art_mock.png" alt="" class="h-64 w-64 p-4 pb-2" >
-                        <h1 class="text-2xl font-bold text-center pb-3 ">Huawei ICT winners</h1>
-                    </div>
-                </div>
-            </div>            <div class="pl-10 pt-9 ">
-                <div class="bg-[#005585]  -rotate-6">
-                    <div class="bg-[#0272B1]  rotate-[5deg] hover:bg-white hover:text-[#0272B1] cursor-pointer " data-modal-toggle="art4"  >
-                        <img src="img/art_mock.png" alt="" class="h-64 w-64 p-4 pb-2" >
-                        <h1 class="text-2xl font-bold text-center pb-3 ">Huawei ICT winners</h1>
-                    </div>
-                </div>
-            </div>            <div class="pl-10 pt-9 ">
-                <div class="bg-[#005585]  -rotate-6">
-                    <div class="bg-[#0272B1]  rotate-[5deg] hover:bg-white hover:text-[#0272B1] cursor-pointer " data-modal-toggle="art5"  >
-                        <img src="img/art_mock.png" alt="" class="h-64 w-64 p-4 pb-2" >
-                        <h1 class="text-2xl font-bold text-center pb-3 ">Huawei ICT winners</h1>
-                    </div>
-                </div>
-            </div>
+        <div id="cat1" class="flex shrink-0">
+<!--            <div class="pl-10 pt-9 ">-->
+<!--                <div class="bg-[#005585]  -rotate-6">-->
+<!--                    <div class="bg-[#0272B1]  rotate-[5deg] hover:bg-white hover:text-[#0272B1] cursor-pointer" data-modal-toggle="art1"  >-->
+<!--                        <img src="img/art_mock.png" alt="" class="h-64 w-64 p-4 pb-2" >-->
+<!--                        <h1 class="text-2xl font-bold text-center pb-3 ">Huawei ICT winners</h1>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
         </div>
     </div>
 
-    <div class="bg-[#8843F2] w-full  text-white flex flex-row overflow-x-auto mt-10">
+    <div class="bg-[#8843F2] w-full  text-white flex flex-row overflow-x-auto mt-10 dark:bg-cyan-900">
         <div class="bg-black/25 rotate-180 text-5xl font-bold p-5 pb-12 pt-12" style="writing-mode: vertical-lr;text-orientation: mixed;">Category #2</div>
-        <div class="flex shrink-0">
-            <div class="pl-10 pt-9">
-                <div class="bg-[#005585]  -rotate-6">
-                    <div class="bg-[#0272B1]  rotate-[5deg]  hover:bg-white hover:text-[#0272B1] cursor-pointer"  data-modal-toggle="art1"   >
-                        <img src="img/art_mock.png" alt="" class="h-64 w-64 p-4 pb-2" >
-                        <h1 class="text-2xl font-bold text-center pb-3 ">Huawei ICT winners</h1>
-                    </div>
-                </div>
-            </div>
+        <div id="cat2" class="flex shrink-0">
+
         </div>
     </div>
 
 
-    <div id="art1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
-        <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
-
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-
-                <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
-                    <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
-                        Article #1
-                    </h3>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="art1">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
-                </div>
-
-                <div class="p-6 space-y-6">
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                    </p>
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                    </p>
-                </div>
-
-                <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                    <button data-modal-toggle="art1" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                    <button onclick="modalShow('art1', 'art2')" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="art2" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
-        <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
-
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-
-                <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
-                    <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
-                        Article #2
-                    </h3>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="art2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
-                </div>
-
-                <div class="p-6 space-y-6">
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                    </p>
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                    </p>
-                </div>
-
-                <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                    <button data-modal-toggle="art2" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                    <button  onclick="modalShow('art2', 'art3')"  type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="art3" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
-        <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
-
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-
-                <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
-                    <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
-                        Article #3
-                    </h3>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="art3">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
-                </div>
-
-                <div class="p-6 space-y-6">
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                    </p>
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                    </p>
-                </div>
-
-                <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                    <button data-modal-toggle="art3" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                    <button  onclick="modalShow('art3', 'art4')" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="art4" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
-        <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
-
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-
-                <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
-                    <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
-                        Article #4
-                    </h3>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="art4">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
-                </div>
-
-                <div class="p-6 space-y-6">
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                    </p>
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                    </p>
-                </div>
-
-                <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                    <button data-modal-toggle="art4" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                    <button  onclick="modalShow('art4', 'art5')"   type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="art5" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
-        <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
-
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-
-                <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
-                    <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
-                        Article #5
-                    </h3>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-collapse-toggle="art5">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
-                </div>
-
-                <div class="p-6 space-y-6">
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                    </p>
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                    </p>
-                </div>
-
-                <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                    <button data-modal-toggle="art5" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                    <button  onclick="modalShow('art5', 'art1')"  type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="bg-[#F47340] w-full h-30 text-white flex flex-row overflow-x-auto mt-10">
+    <div class="bg-[#F47340] w-full h-30 text-white flex flex-row overflow-x-auto mt-10 dark:bg-slate-900">
         <div class="bg-black/25 rotate-180 text-5xl font-bold p-5 pb-12 pt-12" style="writing-mode: vertical-lr;text-orientation: mixed;">Category #3</div>
-        <div class="flex shrink-0">
-            <div class="pl-10 pt-9">
-                <div class="bg-[#005585]  -rotate-6">
-                    <div class="bg-[#0272B1]  rotate-[5deg]  hover:bg-white hover:text-[#0272B1]">
-                        <img src="img/art_mock.png" alt="" class="h-64 w-64 p-4 pb-2" >
-                        <h1 class="text-2xl font-bold text-center pb-3 ">Huawei ICT winners</h1>
-                    </div>
-                </div>
-            </div>
+        <div id="cat3" class="flex shrink-0">
+
         </div>
     </div>
 

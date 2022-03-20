@@ -77,3 +77,9 @@ function modalShow(first, second) {
     toggleModal(first, false);
     toggleModal(second, true);
 }
+function modelShow(first){
+    toggleModal(first, true);
+}
+function modelHide(first){
+    toggleModal(first, false);
+}
