@@ -73,3 +73,7 @@ function topFunction() {
     window.scrollTo({top: 0, behavior: 'smooth'});// For Chrome, Firefox, IE and Opera
 }
 
+function modalShow(first, second) {
+    toggleModal(first, false);
+    toggleModal(second, true);
+}
