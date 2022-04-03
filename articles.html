@@ -32,7 +32,7 @@
                     "            </div>"
                 var code2 =
                     "    <div id=\""+ "art"+val.id +"\" aria-hidden=\"true\" class=\"hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0\">\n" +
-                    "        <div class=\"relative px-4 w-full max-w-2xl h-full md:h-auto\">\n" +
+                    "        <div class=\"relative px-4 w-full max-w-6xl h-full md:h-auto\">\n" +
                     "            <div class=\"relative bg-[#0272B1] rounded-lg shadow dark:bg-gray-700\">\n" +
                     "                <div class=\"flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600\">\n" +
                     "                    <h3 class=\"text-xl font-semibold text-gray-200 lg:text-2xl dark:text-white\">\n" +
@@ -46,6 +46,7 @@
                     "                    <p class=\"text-base leading-relaxed text-gray-200 dark:text-gray-400\">\n" +
                     "                        With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.\n" +
                     "                    </p>\n" +
+                    "                        <img src=\"img/art_mock.png\" alt=\"\" class=\"h-64 w-64 p-4 ml-6 \" >" +
                     "                    <p class=\"text-base leading-relaxed text-gray-200 dark:text-gray-400\">\n" +
                     "                        The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.\n" +
                     "                    </p>\n" +
@@ -64,7 +65,6 @@
                 else
                     cat3 = cat3.concat(code)
                 hiddenModal = hiddenModal.concat(code2)
-                console.log((val.id +1) % article.length )
             });
             $(tech).appendTo( "#cat1" );
             $(cat2).appendTo( "#cat2" );
